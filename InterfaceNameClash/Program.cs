@@ -15,7 +15,11 @@ namespace InterfaceNameClash
 
             IDrawToForm itfForm = (IDrawToForm)oct;
             itfForm.Draw();
-            IDrawToForm itfForm = (IDrawToForm)oct;
+
+            ((IDrawToPrinter)oct).Draw();
+            if (oct is IDrawToMemory dtm)
+                dtm.Draw();
+            Console.ReadLine();
         }
     }
 }

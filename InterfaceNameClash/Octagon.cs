@@ -8,9 +8,17 @@ namespace InterfaceNameClash
 {
     class Octagon : IDrawToForm, IDrawToMemory, IDrawToPrinter
     {
-        public void Draw()
+        void IDrawToForm.Draw()
         {
             Console.WriteLine("Drawing the Octagon...");
+        }
+        void IDrawToMemory.Draw()
+        {
+            Console.WriteLine("Drawing the memory...");
+        }
+        void IDrawToPrinter.Draw()
+        {
+            Console.WriteLine("Drawing the printer...");
         }
     }
 }
